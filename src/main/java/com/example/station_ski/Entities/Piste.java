@@ -1,9 +1,13 @@
 package com.example.station_ski.Entities;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
-
+@Getter
+@Setter
 @Entity
 @Table( name = "Piste")
 public class Piste implements Serializable {
@@ -21,6 +25,65 @@ public class Piste implements Serializable {
     private Set<Skieur> skieurs;
 
 
-// Constructeur et accesseurs (getters) et mutateurs (setters)
+    public Integer getIdPiste() {
+        return idPiste;
+    }
+
+    public void setIdPiste(Integer idPiste) {
+        this.idPiste = idPiste;
+    }
+
+    public Long getNumPiste() {
+        return numPiste;
+    }
+
+    public void setNumPiste(Long numPiste) {
+        this.numPiste = numPiste;
+    }
+
+    public String getNomPiste() {
+        return nomPiste;
+    }
+
+    public void setNomPiste(String nomPiste) {
+        this.nomPiste = nomPiste;
+    }
+
+    public Couleur getCouleur() {
+        return couleur;
+    }
+
+    public void setCouleur(Couleur couleur) {
+        this.couleur = couleur;
+    }
+
+    public Integer getLongeur() {
+        return longeur;
+    }
+
+    public void setLongeur(Integer longeur) {
+        this.longeur = longeur;
+    }
+
+    public Integer getPente() {
+        return pente;
+    }
+
+    public void setPente(Integer pente) {
+        this.pente = pente;
+    }
+
+    public Set<Skieur> getSkieurs() {
+        return skieurs;
+    }
+
+    public void setSkieurs(Set<Skieur> skieurs) {
+        this.skieurs = skieurs;
+    }
+
+    public Piste() {
+    }
 }
+// Constructeur et accesseurs (getters) et mutateurs (setters)
+
 

@@ -1,10 +1,14 @@
 package com.example.station_ski.Entities;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
-
+@Getter
+@Setter
 @Entity
 @Table( name = "Skieur")
 public class Skieur implements Serializable {  // convertir la forme l'objet en  byte pour la protection du data //
@@ -21,8 +25,14 @@ public class Skieur implements Serializable {  // convertir la forme l'objet en 
     private Set<Piste> pistes;
     @OneToMany(cascade = CascadeType.ALL, mappedBy="skieur")
     private Set<Inscription> inscriptions;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Abonnement abonnement;
 
-// Constructeur et accesseurs (getters) et mutateurs (setters)
+    public Skieur(Integer idSkieur) {
+        this.idSkieur = idSkieur;
+    }
+
+    public Skieur() {
+    }
+    // Constructeur et accesseurs (getters) et mutateurs (setters)
 }
